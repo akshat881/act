@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import './css/bootstrap.min.css'
+import './css/preloader.min.css'
+import './css/circle.css'
+import './css/font-awesome.min.css'
+import './css/fm.revealator.jquery.min.css'
+import './css/style.css'
+import './css/skins/green.css'
+import Cont from './assets/Contact'
+import Nav from './assets/Nav'
+import Hom from './assets/Home'
+import About from './assets/About'
+import Port from './assets/Portfolio'
+import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
+export default function App(){
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+    <Router>
+    <Nav/>
+  
+    <Routes>
+    <Route path="/" element={<Hom/>} />
+    <Route path="/contact" element={<Cont/>}/>
+    <Route path="/about" element={<About/>}/>
+    <Route path="/portfolio" element={<Port/>}/>
+   </Routes>
+   </Router>
+  )
 }
-
-export default App;
